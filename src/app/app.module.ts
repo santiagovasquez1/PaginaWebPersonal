@@ -1,3 +1,4 @@
+import { DataSantiagoService } from './Service/data-santiago.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,6 +10,8 @@ import { HistoriaLaboralComponent } from './Component/historia-laboral/historia-
 import { HistoriaAcademicaComponent } from './Component/historia-academica/historia-academica.component';
 import { InfoPersonalComponent } from './Component/info-personal/info-personal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { ReferenciaPersonalComponent } from './Component/referencia-personal/referencia-personal.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     HistoriaLaboralComponent,
     HistoriaAcademicaComponent,
-    InfoPersonalComponent
+    InfoPersonalComponent,
+    ReferenciaPersonalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
-  providers: [],
+  providers: [DataSantiagoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

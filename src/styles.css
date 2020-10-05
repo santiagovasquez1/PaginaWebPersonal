@@ -1,4 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #ececec;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+mat-card {
+    margin: auto;
+    display: block;
+    margin-top: 2rem;
+}
+
+#TituloReferencia {
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+}
+
+.InfoPersonal {
+    background-color: #3a41e4;
+    padding: 0rem;
+    color: white;
+    width: 30%;
+    float: left;
+}
+
+.InfoPersonal img {
+    border: 0;
+    margin: 0%;
+    width: 100%;
+    filter: grayscale(50%);
+}
+
+.Referenciacontainer {
+    padding: 2rem;
+}

@@ -1,1 +1,10 @@
-<p>datos-contacto works!</p>
+<h2>
+    Datos de contacto</h2>
+<p>Teléfono: {{santiago.telefono}}</p>
+<p>Correo electronico: {{santiago.correo}}</p>
+<p>Linkedin:
+    <a href="https://www.linkedin.com/in/santiago-vasquez-gomez-9266bb17a/">santiago-vasquezgomez- 9266bb17a</a>
+</p>
+
+<h2 id="TituloReferencia">Referencias personales</h2>
+<app-referencia-personal *ngFor="let referencia of santiago.referenciasLaborales" [refPersonal]="referencia"></app-referencia-personal>

@@ -1,3 +1,5 @@
+import { Santiago } from './../../Model/santiago';
+import { DataSantiagoService } from './../../Service/data-santiago.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatosContactoComponent implements OnInit {
 
-  constructor() { }
+  santiago: Santiago;
+  constructor(public dataService: DataSantiagoService) {
+    this.santiago = dataService.santiago;
+  }
 
   ngOnInit(): void {
   }

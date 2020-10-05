@@ -30,11 +30,12 @@ export class DataSantiagoService {
     ];
 
     this.santiago.referenciasLaborales = [];
+    this.santiago.historiasLaborales = [];
     this.santiago.historiasAcademicas = [];
     this.santiago.cursosCertificado = [];
 
     this.generarReferencias();
-    this.generarHistoriaLaboral();
+    // this.generarHistoriaLaboral();
   }
 
   private generarReferencias() {
@@ -68,8 +69,6 @@ export class DataSantiagoService {
       'Proyectos de Ingeniería S.A.S. Software desarrollado en' +
       'C# y Telerik UI Forms según arquitectura' +
       'MVC, base de datos en MySql.');
-
-
 
   }
 
