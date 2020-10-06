@@ -1,17 +1,28 @@
 .InfoPersonalContainer {
     padding: 2rem;
-    margin: 2rem;
-    margin-left: 400px;
-    color: #3a41e4;
 }
 
 .InfoPersonalContainer h1 {
+    margin: 0rem;
+    padding: 0rem;
     font-size: 4em;
     line-height: 1em;
+    text-align: left;
 }
 
-.InfoPersonalContainer hr {
-    height: 2px;
-    border-color: #3a41e4;
-    background-color: #3a41e4;
+.ResumenAptitudes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ResumenPersonal {
+    margin: 2rem;
+    max-width: 40%;
+    text-align: left;
+}
+
+.Aptitudes {
+    margin: 2rem;
+    max-width: 40%;
+    text-align: left;
 }

@@ -1,31 +1,15 @@
-<!-- <mat-grid-list cols="2">
-    <app-datos-contacto></app-datos-contacto>
-</mat-grid-list> -->
+<main class="main">
 
-<!-- <app-datos-contacto></app-datos-contacto> -->
-
-<!-- <mat-grid-list cols="4" rowHeight="170px" gutterSize="5px">
-    <mat-grid-tile>
-        <H1>Hola mundo</H1>
-        <mat-grid-tile-header>
-            <h3>Hola mundo</h3>
-        </mat-grid-tile-header>
-    </mat-grid-tile>
-</mat-grid-list> -->
-
-<!-- <main>
-    <mat-card>
-        <mat-card-title>Datos personales</mat-card-title>
-        <app-datos-contacto></app-datos-contacto>
-    </mat-card>
-</main> -->
-
-<main>
     <div class="InfoPersonal">
         <img src="./assets/images/Imagen Personal.png" alt="Santiago Vásquez Gómez">
         <div class="Referenciacontainer">
             <app-datos-contacto></app-datos-contacto>
         </div>
     </div>
-    <app-info-personal></app-info-personal>
+    <div class="historiaContainer">
+        <app-info-personal></app-info-personal>
+        <H1>Historia laboral</H1>
+        <app-historia-laboral *ngFor="let historia of santiago.historiasLaborales" [historiaLaboral]="historia"></app-historia-laboral>
+    </div>
+
 </main>

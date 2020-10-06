@@ -15,10 +15,15 @@ body {
     box-sizing: border-box;
 }
 
-.main {
-    width: 100%;
-    margin-top: 2rem;
-    text-align: center;
+hr {
+    height: 2px;
+    border-color: #3a41e4;
+    background-color: #3a41e4;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
 }
 
 mat-card {
@@ -27,26 +32,55 @@ mat-card {
     margin-top: 2rem;
 }
 
-#TituloReferencia {
-    margin-top: 5rem;
-    margin-bottom: 0rem;
+#HistoriaTitle {
+    font-size: 2.5em;
+    line-height: 1em;
+    color: #3a41e4;
 }
 
 .InfoPersonal {
     background-color: #3a41e4;
     padding: 0rem;
     color: white;
-    width: 30%;
-    float: left;
+    width: 300px;
+    margin-right: 2rem;
+    min-height: 100%;
+    position: fixed;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+.Referenciacontainer {
+    padding: 1rem;
 }
 
 .InfoPersonal img {
     border: 0;
     margin: 0%;
     width: 100%;
-    filter: grayscale(50%);
+    filter: grayscale(100%);
 }
 
-.Referenciacontainer {
-    padding: 2rem;
+.historiaContainer {
+    margin: 0rem;
+    padding: 0rem;
+    padding-right: 20rem;
+    min-height: 100%;
+    position: absolute;
+    left: 310px;
+    color: #3a41e4;
+    width: 100%;
+    /* display: block;
+    flex-direction: column; */
+}
+
+.header {
+    position: fixed;
+    /* z-index: 9; */
+}
+
+.historiaContainer h1 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 2.5em;
+    line-height: 1em;
 }

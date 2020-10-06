@@ -4,6 +4,6 @@ export class HistoriaLaboral {
   empresa: string;
   fechaIni: Date;
   fechaFin: Date;
-  funcionesCargo: string[];
+  funcionesCargo: string[] = [];
 
 }

@@ -1,0 +1,28 @@
+.HistoriaLaboralContainer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12); */
+}
+
+.experienciaContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.Cargo {
+    margin: 2rem;
+    width: 40%;
+    text-align: left;
+}
+
+.Descripcion {
+    margin: 2rem;
+    max-width: 40%;
+}
+
+.Descripcion li {
+    padding: 2px;
+}
