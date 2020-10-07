@@ -39,6 +39,7 @@ export class DataSantiagoService {
     this.generarHistoriaAcademica();
     this.generarCertificado();
 
+    this.santiago.cursosCertificado.sort((a, b) => (a.fechaFin < b.fechaFin ? -1 : 1));
   }
 
   private generarReferencias() {
@@ -202,7 +203,7 @@ export class DataSantiagoService {
     const curso7 = new CursoCertificado();
     curso7.institucion = 'Platzi';
     curso7.curso = 'introducción a terminal y linea de comandos';
-    curso7.fechaFin = new Date('2020-11-03');
+    curso7.fechaFin = new Date('2019-11-03');
     curso7.urlImagen = '../../assets/images/certificados/diploma-terminal-2019_page-0001.jpg';
 
     const curso8 = new CursoCertificado();
