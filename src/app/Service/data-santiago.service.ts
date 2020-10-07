@@ -1,3 +1,5 @@
+import { CursoCertificado } from './../Model/curso-certificados';
+import { HistoriaAcademica } from './../Model/historia-academica';
 import { ReferenciaPersonal } from './../Model/referencia-personal';
 import { HistoriaLaboral } from './../Model/historia-laboral';
 import { Santiago } from './../Model/santiago';
@@ -34,6 +36,9 @@ export class DataSantiagoService {
 
     this.generarReferencias();
     this.generarHistoriaLaboral();
+    this.generarHistoriaAcademica();
+    this.generarCertificado();
+
   }
 
   private generarReferencias() {
@@ -127,11 +132,109 @@ export class DataSantiagoService {
     this.insertarHistoria(historia4);
   }
 
+  private generarHistoriaAcademica() {
+    const academica1 = new HistoriaAcademica();
+    academica1.carrera = 'Especialización en Ingeniería de Software';
+    academica1.universidad = 'Universidad de Medellín';
+    academica1.estado = 'Estudiante de posgrado';
+    academica1.fechaIni = new Date('2020-02-02');
+    academica1.fechaFin = new Date();
+    academica1.descripcionPrograma.push('La Especialización en Ingeniería de Software se constituye en un programa de formación de alto nivel para contribuir a la solución de problemas propios del ámbito del desarrollo de software.');
+
+    const academica2 = new HistoriaAcademica();
+    academica2.carrera = 'Especialización en Estructuras';
+    academica2.universidad = 'Universidad Nacional de Colombia';
+    academica2.estado = 'Graduado';
+    academica2.fechaIni = new Date('2016-02-02');
+    academica2.fechaFin = new Date('2016-12-02');
+    academica2.descripcionPrograma.push('El Programa de Especialización en Estructuras promoverá la profundización en el campo específico de la Ingeniería Estructural, y la ampliación del conocimiento en el comportamiento de los materiales, métodos de análisis y diseño y nuevos sistemas de construcción.');
+
+    const academica3 = new HistoriaAcademica();
+    academica3.carrera = 'Ingeniería Civil';
+    academica3.universidad = 'Universidad Nacional de Colombia';
+    academica3.estado = 'Graduado';
+    academica3.fechaIni = new Date('2010-02-02');
+    academica3.fechaFin = new Date('2015-12-30');
+    academica3.descripcionPrograma.push('El Programa Curricular de Ingeniería Civil tiene como misión formar ingenieros que sean capaces de dar solución a los problemas nacionales y regionales.');
+
+    this.insertarHistoriaAcademica(academica1);
+    this.insertarHistoriaAcademica(academica2);
+    this.insertarHistoriaAcademica(academica3);
+  }
+
+  private generarCertificado() {
+    const Curso1 = new CursoCertificado();
+    Curso1.institucion = 'Platzi';
+    Curso1.curso = 'asp.net core';
+    Curso1.fechaFin = new Date('2020-01-18');
+    Curso1.urlImagen = '../../assets/images/certificados/diploma-aspnet-core_page-0001.jpg';
+
+    const curso2 = new CursoCertificado();
+    curso2.institucion = 'Platzi';
+    curso2.curso = 'Básico de javascript';
+    curso2.fechaFin = new Date('2020-04-23');
+    curso2.urlImagen = '../../assets/images/certificados/diploma-basico-javascript_page-0001.jpg';
+
+    const curso3 = new CursoCertificado();
+    curso3.institucion = 'Platzi';
+    curso3.curso = 'C# con .Net core';
+    curso3.fechaFin = new Date('2020-01-13');
+    curso3.urlImagen = '../../assets/images/certificados/diploma-c-sharp_page-0001.jpg';
+
+    const curso4 = new CursoCertificado();
+    curso4.institucion = 'Platzi';
+    curso4.curso = 'Bases de datos en aws';
+    curso4.fechaFin = new Date('2020-04-02');
+    curso4.urlImagen = '../../assets/images/certificados/diploma-db-aws_page-0001.jpg';
+
+    const curso5 = new CursoCertificado();
+    curso5.institucion = 'Platzi';
+    curso5.curso = 'Programación Básica';
+    curso5.fechaFin = new Date('2020-01-01');
+    curso5.urlImagen = '../../assets/images/certificados/diploma-programacion-basica_page-0001.jpg';
+
+    const curso6 = new CursoCertificado();
+    curso6.institucion = 'Platzi';
+    curso6.curso = 'Sql y MySql';
+    curso6.fechaFin = new Date('2020-03-16');
+    curso6.urlImagen = '../../assets/images/certificados/diploma-sql-mysql_page-0001.jpg';
+
+    const curso7 = new CursoCertificado();
+    curso7.institucion = 'Platzi';
+    curso7.curso = 'introducción a terminal y linea de comandos';
+    curso7.fechaFin = new Date('2020-11-03');
+    curso7.urlImagen = '../../assets/images/certificados/diploma-terminal-2019_page-0001.jpg';
+
+    const curso8 = new CursoCertificado();
+    curso8.institucion = 'Platzi';
+    curso8.curso = 'Xamarin.Forms';
+    curso8.fechaFin = new Date('2020-02-05');
+    curso8.urlImagen = '../../assets/images/certificados/diploma-xamarin-forms_page-0001.jpg';
+
+    this.insertarCertificado(Curso1);
+    this.insertarCertificado(curso2);
+    this.insertarCertificado(curso3);
+    this.insertarCertificado(curso4);
+    this.insertarCertificado(curso5);
+    this.insertarCertificado(curso6);
+    this.insertarCertificado(curso7);
+    this.insertarCertificado(curso8);
+
+  }
+
   public insertarReferencia(referencia: Persona) {
     this.santiago.referenciasLaborales.push(referencia);
   }
 
   public insertarHistoria(historiaLaboral: HistoriaLaboral) {
     this.santiago.historiasLaborales.push(historiaLaboral);
+  }
+
+  public insertarHistoriaAcademica(historiaAcademica: HistoriaAcademica) {
+    this.santiago.historiasAcademicas.push(historiaAcademica);
+  }
+
+  public insertarCertificado(certificado: CursoCertificado) {
+    this.santiago.cursosCertificado.push(certificado);
   }
 }

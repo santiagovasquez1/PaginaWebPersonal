@@ -1,7 +1,8 @@
 export class HistoriaAcademica {
   carrera: string;
-  Universidad: string;
+  universidad: string;
+  estado: string;
   fechaIni: Date;
   fechaFin: Date;
-  DescripcionPrograma: string[];
+  descripcionPrograma: string[] = [];
 }

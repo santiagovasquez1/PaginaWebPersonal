@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HistoriaAcademica } from './../../Model/historia-academica';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-historia-academica',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historia-academica.component.css']
 })
 export class HistoriaAcademicaComponent implements OnInit {
-
+  @Input() historiaAcademica: HistoriaAcademica;
   constructor() { }
 
   ngOnInit(): void {

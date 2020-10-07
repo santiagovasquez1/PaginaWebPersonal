@@ -12,6 +12,7 @@ import { InfoPersonalComponent } from './Component/info-personal/info-personal.c
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ReferenciaPersonalComponent } from './Component/referencia-personal/referencia-personal.component';
+import { CertificadoComponent } from './Component/certificado/certificado.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReferenciaPersonalComponent } from './Component/referencia-personal/ref
     HistoriaLaboralComponent,
     HistoriaAcademicaComponent,
     InfoPersonalComponent,
-    ReferenciaPersonalComponent
+    ReferenciaPersonalComponent,
+    CertificadoComponent
   ],
   imports: [
     BrowserModule,

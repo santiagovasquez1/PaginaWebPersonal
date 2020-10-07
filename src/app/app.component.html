@@ -1,5 +1,4 @@
 <main class="main">
-
     <div class="InfoPersonal">
         <img src="./assets/images/Imagen Personal.png" alt="Santiago Vásquez Gómez">
         <div class="Referenciacontainer">
@@ -7,9 +6,20 @@
         </div>
     </div>
     <div class="historiaContainer">
+        <div class="header">
+            <h1>{{santiago.nombre}}</h1>
+            <h2>Ingeniero civil, Especialista en estructuras y desarrollador de software</h2>
+        </div>
         <app-info-personal></app-info-personal>
-        <H1>Historia laboral</H1>
+        <h1>Historia laboral</h1>
         <app-historia-laboral *ngFor="let historia of santiago.historiasLaborales" [historiaLaboral]="historia"></app-historia-laboral>
+        <hr>
+        <h1>Historia Académica</h1>
+        <app-historia-academica *ngFor="let histAcademica of santiago.historiasAcademicas" [historiaAcademica]="histAcademica"></app-historia-academica>
+        <hr>
+        <h1>Certificados</h1>
+        <div class="cursosContainer">
+            <app-certificado *ngFor="let certificado of santiago.cursosCertificado" [certificado]="certificado"></app-certificado>
+        </div>
     </div>
-
 </main>
