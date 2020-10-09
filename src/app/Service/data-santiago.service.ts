@@ -1,3 +1,4 @@
+import { ServicioProfesional } from './../Model/servicio-profesional';
 import { CursoCertificado } from './../Model/curso-certificados';
 import { HistoriaAcademica } from './../Model/historia-academica';
 import { ReferenciaPersonal } from './../Model/referencia-personal';
@@ -33,11 +34,13 @@ export class DataSantiagoService {
     this.santiago.historiasLaborales = [];
     this.santiago.historiasAcademicas = [];
     this.santiago.cursosCertificado = [];
+    this.santiago.serviciosProfesionales = [];
 
     this.generarReferencias();
     this.generarHistoriaLaboral();
     this.generarHistoriaAcademica();
     this.generarCertificado();
+    this.generarServicioProf();
 
     this.santiago.cursosCertificado.sort((a, b) => (a.fechaFin < b.fechaFin ? -1 : 1));
   }
@@ -62,7 +65,7 @@ export class DataSantiagoService {
     const historia1 = new HistoriaLaboral();
     historia1.cargo = 'Desarrollador de software';
     historia1.empresa = 'Independiente';
-    historia1.fechaIni = new Date('2020-06-01');
+    historia1.fechaIni = new Date('2020-01-01');
     historia1.fechaFin = new Date();
 
     historia1.funcionesCargo.push('Desarrollo de aplicación de ' +
@@ -163,6 +166,27 @@ export class DataSantiagoService {
     this.insertarHistoriaAcademica(academica3);
   }
 
+  private generarServicioProf() {
+    const servicio1 = new ServicioProfesional();
+    servicio1.tipoServ = 'Diseño estructural';
+    servicio1.descripcion = 'Se ofrece el diseño estructural con el fin de dar soluciones optimas que se ajusten a las necesidades de cada proyecto.';
+    servicio1.urlServicio = '../../assets/images/servicios/disenioEst.jpg';
+
+    const servicio2 = new ServicioProfesional();
+    servicio2.tipoServ = 'Desarrollo de Software a la medida';
+    servicio2.descripcion = ' Se ofrece el desarrollo de software a la medida especializada en  el área de la ingeniería civil, basado en las necesidades particulares del cliente, buscando asi optimizar y automatizar procesos dentro de la compañía.';
+    servicio2.urlServicio = '../../assets/images/servicios/desarrolloSoftware.jpg';
+
+    const servicio3 = new ServicioProfesional();
+    servicio3.tipoServ = 'Revisión de diseños estructurales';
+    servicio3.descripcion = 'Se ofrece la revisión estructural de los diseños estructurales para verificar que estos cumplan con las leyes y normas de construcción vigentes.';
+    servicio3.urlServicio = '../../assets/images/servicios/RevisionEstructural.jpg';
+
+    this.insertarServicio(servicio1);
+    this.insertarServicio(servicio2);
+    this.insertarServicio(servicio3);
+  }
+
   private generarCertificado() {
     const Curso1 = new CursoCertificado();
     Curso1.institucion = 'Platzi';
@@ -237,5 +261,9 @@ export class DataSantiagoService {
 
   public insertarCertificado(certificado: CursoCertificado) {
     this.santiago.cursosCertificado.push(certificado);
+  }
+
+  public insertarServicio(servicioProfesional: ServicioProfesional) {
+    this.santiago.serviciosProfesionales.push(servicioProfesional);
   }
 }

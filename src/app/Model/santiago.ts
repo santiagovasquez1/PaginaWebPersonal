@@ -1,3 +1,4 @@
+import { ServicioProfesional } from './servicio-profesional';
 import { CursoCertificado } from './curso-certificados';
 import { HistoriaAcademica } from './historia-academica';
 import { HistoriaLaboral } from './historia-laboral';
@@ -11,4 +12,5 @@ export class Santiago extends Persona {
   historiasLaborales: HistoriaLaboral[];
   historiasAcademicas: HistoriaAcademica[];
   cursosCertificado: CursoCertificado[];
+  serviciosProfesionales: ServicioProfesional[];
 }

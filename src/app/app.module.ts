@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ReferenciaPersonalComponent } from './Component/referencia-personal/referencia-personal.component';
 import { CertificadoComponent } from './Component/certificado/certificado.component';
+import { ServiciosProfComponent } from './Component/servicios-prof/servicios-prof.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CertificadoComponent } from './Component/certificado/certificado.compon
     HistoriaAcademicaComponent,
     InfoPersonalComponent,
     ReferenciaPersonalComponent,
-    CertificadoComponent
+    CertificadoComponent,
+    ServiciosProfComponent
   ],
   imports: [
     BrowserModule,

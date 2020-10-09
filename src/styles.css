@@ -93,7 +93,7 @@ mat-card {
     line-height: 1em;
 }
 
-.cursosContainer {
+.cardsContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

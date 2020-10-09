@@ -11,6 +11,11 @@
             <h2>Ingeniero civil, Especialista en estructuras y desarrollador de software</h2>
         </div>
         <app-info-personal></app-info-personal>
+        <h1>Servicios profesionales</h1>
+        <div class="cardsContainer">
+            <app-servicios-prof *ngFor="let servicio of santiago.serviciosProfesionales" [servicioProf]="servicio"></app-servicios-prof>
+        </div>
+        <hr>
         <h1>Historia laboral</h1>
         <app-historia-laboral *ngFor="let historia of santiago.historiasLaborales" [historiaLaboral]="historia"></app-historia-laboral>
         <hr>
@@ -18,7 +23,7 @@
         <app-historia-academica *ngFor="let histAcademica of santiago.historiasAcademicas" [historiaAcademica]="histAcademica"></app-historia-academica>
         <hr>
         <h1>Certificados</h1>
-        <div class="cursosContainer">
+        <div class="cardsContainer">
             <app-certificado *ngFor="let certificado of santiago.cursosCertificado" [certificado]="certificado"></app-certificado>
         </div>
     </div>
