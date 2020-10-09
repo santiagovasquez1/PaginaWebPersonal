@@ -113,7 +113,7 @@ export class DataSantiagoService {
     const historia4 = new HistoriaLaboral();
     historia4.cargo = 'Diseñador estructural';
     historia4.empresa = 'Efe prima Ce S.A.S';
-    historia4.fechaIni = new Date('2017-06-01');
+    historia4.fechaIni = new Date('2016-02-01');
     historia4.fechaFin = new Date('2019-12-27');
 
     historia4.funcionesCargo.push('Diseño Estructural de Plataforma de parqueaderos de 8 niveles en pórticos resistentes a momento para el proyecto Ciprés Mosquera, Cundinamarca.');
