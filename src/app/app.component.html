@@ -9,19 +9,33 @@
         <div class="header">
             <h1>{{santiago.nombre}}</h1>
             <h2>Ingeniero civil, Especialista en estructuras y desarrollador de software</h2>
+            <ul>
+                <li>
+                    <a class="Link" href="#serviciosProfecionales">Servicios profecionales</a>
+                </li>
+                <li>
+                    <a class="Link" href="#historiaLaboral">Historia Laboral</a>
+                </li>
+                <li>
+                    <a class="Link" href="#historiaAcademica">Historia Acedémica</a>
+                </li>
+                <li>
+                    <a class="Link" href="#certificados">Certificados</a>
+                </li>
+            </ul>
         </div>
         <app-info-personal></app-info-personal>
         <h1>Servicios profesionales</h1>
-        <div class="cardsContainer">
+        <div class="cardsContainer" id="serviciosProfecionales">
             <app-servicios-prof *ngFor="let servicio of santiago.serviciosProfesionales" [servicioProf]="servicio"></app-servicios-prof>
         </div>
-        <hr>
+        <hr id="historiaLaboral">
         <h1>Historia laboral</h1>
         <app-historia-laboral *ngFor="let historia of santiago.historiasLaborales" [historiaLaboral]="historia"></app-historia-laboral>
-        <hr>
+        <hr id="historiaAcademica">
         <h1>Historia Académica</h1>
         <app-historia-academica *ngFor="let histAcademica of santiago.historiasAcademicas" [historiaAcademica]="histAcademica"></app-historia-academica>
-        <hr>
+        <hr id="certificados">
         <h1>Certificados</h1>
         <div class="cardsContainer">
             <app-certificado *ngFor="let certificado of santiago.cursosCertificado" [certificado]="certificado"></app-certificado>
