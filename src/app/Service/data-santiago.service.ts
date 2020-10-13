@@ -236,6 +236,12 @@ export class DataSantiagoService {
     curso8.fechaFin = new Date('2020-02-05');
     curso8.urlImagen = '../../assets/images/certificados/diploma-xamarin-forms_page-0001.jpg';
 
+    const curso9 = new CursoCertificado();
+    curso9.institucion = 'Coursera';
+    curso9.curso = 'Desarrollo de páginas con Angular';
+    curso9.fechaFin = new Date('2020-10-13');
+    curso9.urlImagen = '../../assets/images/certificados/diplomaAngular_page-0001.jpg';
+
     this.insertarCertificado(Curso1);
     this.insertarCertificado(curso2);
     this.insertarCertificado(curso3);
@@ -244,6 +250,7 @@ export class DataSantiagoService {
     this.insertarCertificado(curso6);
     this.insertarCertificado(curso7);
     this.insertarCertificado(curso8);
+    this.insertarCertificado(curso9);
 
   }
 
