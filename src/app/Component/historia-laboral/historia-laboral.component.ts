@@ -24,31 +24,11 @@ export class HistoriaLaboralComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.mainSubscription = this.historiaController.resize$.subscribe(anchopag => {
       this.widthPage = anchopag;
-      this.onResize(anchopag);
+      this.historiaController.onResize(anchopag, document, 'experienciaContainerFlex', 'experienciaContainerBlock');
     });
   }
 
   ngOnDestroy(): void {
     this.mainSubscription.unsubscribe();
-  }
-
-  private onResize(ancho: number) {
-
-    if (ancho <= 1041) {
-      const root = Array.from(document.getElementsByClassName('experienciaContainerFlex'));
-      for (const item of root) {
-        item.setAttribute('class', 'experienciaContainerBlock');
-        const children = Array.from(item.childNodes) as Element[];
-        this.historiaController.resizeDiv(children, 'style', 'width: 100%;');
-      }
-    }
-    else {
-      const root = Array.from(document.getElementsByClassName('experienciaContainerBlock'));
-      for (const item of root) {
-        item.setAttribute('class', 'experienciaContainerFlex');
-        const children = Array.from(item.childNodes) as Element[];
-        this.historiaController.resizeDiv(children, 'style', 'width: 40%;');
-      }
-    }
   }
 }

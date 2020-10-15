@@ -22,27 +22,7 @@ export class InfoPersonalComponent implements OnInit {
   ngOnInit(): void {
     this.mainSubscription = this.historiaController.resize$.subscribe(anchopag => {
       this.widthPage = anchopag;
-      this.onResize(anchopag);
+      this.historiaController.onResize(anchopag, document, 'ResumenAptitudesFlex', 'ResumenAptitudesBlock');
     });
   }
-
-  private onResize(ancho: number) {
-    if (ancho <= 1041) {
-      const root = Array.from(document.getElementsByClassName('ResumenAptitudesFlex'));
-      for (const item of root) {
-        item.setAttribute('class', 'ResumenAptitudesBlock');
-        const children = Array.from(item.childNodes) as Element[];
-        this.historiaController.resizeDiv(children, 'style', 'width: 100%;');
-      }
-    }
-    else {
-      const root = Array.from(document.getElementsByClassName('ResumenAptitudesBlock'));
-      for (const item of root) {
-        item.setAttribute('class', 'ResumenAptitudesFlex');
-        const children = Array.from(item.childNodes) as Element[];
-        this.historiaController.resizeDiv(children, 'style', 'width: 40%;');
-      }
-    }
-  }
-
 }

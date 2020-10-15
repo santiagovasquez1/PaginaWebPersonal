@@ -6,8 +6,15 @@
     /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12); */
 }
 
-.academicaContainer {
+.academicaContainerFlex {
     display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.academicaContainerBlock {
+    display: block;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
 }
@@ -20,9 +27,15 @@
 
 .Descripcion {
     margin: 2rem;
-    max-width: 40%;
+    width: 40%;
+}
+
+.Descripcion ul {
+    margin: 0;
+    padding: 0px;
 }
 
 .Descripcion li {
     padding: 2px;
+    text-align: justify;
 }
