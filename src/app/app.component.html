@@ -1,14 +1,14 @@
-<main class="main">
+<main class="main" (window:resize)="onResize($event)" id="ventanaPrincipal">
     <div class="InfoPersonal">
-        <img src="./assets/images/Imagen Personal.png" alt="Santiago Vásquez Gómez">
-        <div class="Referenciacontainer">
+        <img src="./assets/images/Imagen Personal.png" alt="Santiago Vásquez Gómez" itemprop="image">
+        <div class="Referenciacontainer" itemscope itemtype="https://schema.org/Person">
             <app-datos-contacto></app-datos-contacto>
         </div>
     </div>
-    <div class="historiaContainer">
+    <div class="historiaContainer" itemscope itemtype="https://schema.org/Person">
         <div class="header">
-            <h1>{{santiago.nombre}}</h1>
-            <h2>Ingeniero civil, Especialista en estructuras y desarrollador de software</h2>
+            <h1 itemprop="name">{{santiago.nombre}}</h1>
+            <h2 itemprop="jobTitle">Ingeniero civil, Especialista en estructuras y desarrollador de software</h2>
             <ul>
                 <li>
                     <a class="Link" href="#serviciosProfecionales">Servicios profecionales</a>

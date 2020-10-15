@@ -1,11 +1,11 @@
-<div class="HistoriaLaboralContainer">
-    <div class="experienciaContainer">
-        <div class="Cargo">
+<div class="HistoriaLaboralContainer" id="historiaLaboralContainer">
+    <div class="experienciaContainer" id="experiencia">
+        <div class="Cargo" id="cargo">
             <h2><b>{{historiaLaboral.cargo.toUpperCase()}}</b></h2>
             <p><i>{{historiaLaboral.empresa}}</i></p>
             <p><i>{{historiaLaboral.fechaIni|date}}-{{historiaLaboral.fechaFin|date}}</i></p>
         </div>
-        <div class="Descripcion">
+        <div class="Descripcion" id="descripcion">
             <h2><b>Logros</b></h2>
             <ul>
                 <li *ngFor="let function of historiaLaboral.funcionesCargo">{{function}}</li>

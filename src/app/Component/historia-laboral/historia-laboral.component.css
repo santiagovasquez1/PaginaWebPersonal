@@ -8,8 +8,16 @@
 
 .experienciaContainer {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+}
+
+.experienciaContainerMobile {
+    display: block;
+    /* flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start; */
 }
 
 .Cargo {
@@ -20,7 +28,12 @@
 
 .Descripcion {
     margin: 2rem;
-    max-width: 40%;
+    width: 40%;
+}
+
+.Descripcion ul {
+    margin: 0;
+    padding: 0px;
 }
 
 .Descripcion li {

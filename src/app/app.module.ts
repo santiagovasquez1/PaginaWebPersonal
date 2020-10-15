@@ -1,3 +1,4 @@
+import { HistoriaControllerService } from './Service/historia-controller.service';
 import { DataSantiagoService } from './Service/data-santiago.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -33,7 +34,7 @@ import { ServiciosProfComponent } from './Component/servicios-prof/servicios-pro
     BrowserAnimationsModule,
     MaterialModule,
   ],
-  providers: [DataSantiagoService],
+  providers: [DataSantiagoService, HistoriaControllerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
