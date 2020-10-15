@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +8,9 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export class HistoriaControllerService {
 
   resize$ = new EventEmitter<number>();
+  deviceInfo = null;
 
-  constructor() { }
+  constructor(private deviceService: DeviceDetectorService) { }
 
   public onResize(ancho: number, myDocument: Document, flexContainer: string, blockContainer: string) {
     if (ancho <= 1080) {
@@ -28,11 +29,16 @@ export class HistoriaControllerService {
         this.resizeDiv(children, 'style', 'width: 40%;');
       }
     }
+
   }
 
   private resizeDiv(elementos: Element[], atributo: string, valorAtributo: string) {
     for (let elemento of elementos) {
       elemento.setAttribute(atributo, valorAtributo);
     }
+  }
+
+  public detectDevice(){
+    this.deviceInfo = this.deviceService.getDeviceInfo();
   }
 }
