@@ -11,21 +11,28 @@
     text-align: left;
 }
 
-
-
-.ResumenAptitudes {
+.ResumenAptitudesFlex {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.ResumenAptitudesBlock {
+    display: block;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .ResumenPersonal {
     margin: 2rem;
-    max-width: 40%;
-    text-align: left;
+    width: 40%;
+    text-align: justify;
 }
 
 .Aptitudes {
     margin: 2rem;
-    max-width: 40%;
-    text-align: left;
+    width: 40%;
+    text-align: justify;
 }

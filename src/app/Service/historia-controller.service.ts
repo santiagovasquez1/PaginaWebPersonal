@@ -10,4 +10,12 @@ export class HistoriaControllerService {
   resize$ = new EventEmitter<number>();
 
   constructor(){}
+
+
+
+  public resizeDiv(elementos: Element[], atributo: string, valorAtributo: string) {
+    for (let elemento of elementos) {
+      elemento.setAttribute(atributo, valorAtributo);
+    }
+  }
 }

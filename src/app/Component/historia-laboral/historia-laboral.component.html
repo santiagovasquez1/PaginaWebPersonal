@@ -1,5 +1,5 @@
 <div class="HistoriaLaboralContainer" id="historiaLaboralContainer">
-    <div class="experienciaContainer" id="experiencia">
+    <div *ngFor="let historiaLaboral of historiasLaborales" class="experienciaContainerFlex" id="experiencia">
         <div class="Cargo" id="cargo">
             <h2><b>{{historiaLaboral.cargo.toUpperCase()}}</b></h2>
             <p><i>{{historiaLaboral.empresa}}</i></p>

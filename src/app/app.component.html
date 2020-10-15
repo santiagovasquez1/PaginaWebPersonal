@@ -1,4 +1,4 @@
-<main class="main" (window:resize)="onResize($event)" id="ventanaPrincipal">
+<main class="main" (window:resize)="onResize($event)" (window:load)="onResize($event)" id="ventanaPrincipal">
     <div class="InfoPersonal">
         <img src="./assets/images/Imagen Personal.png" alt="Santiago Vásquez Gómez" itemprop="image">
         <div class="Referenciacontainer" itemscope itemtype="https://schema.org/Person">
@@ -31,7 +31,7 @@
         </div>
         <hr id="historiaLaboral">
         <h1>Historia laboral</h1>
-        <app-historia-laboral *ngFor="let historia of santiago.historiasLaborales" [historiaLaboral]="historia"></app-historia-laboral>
+        <app-historia-laboral></app-historia-laboral>
         <hr id="historiaAcademica">
         <h1>Historia Académica</h1>
         <app-historia-academica *ngFor="let histAcademica of santiago.historiasAcademicas" [historiaAcademica]="histAcademica"></app-historia-academica>

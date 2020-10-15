@@ -9,18 +9,13 @@ import { OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent   {
   title = 'WebPersonal';
   santiago: Santiago;
   widthPage: number;
 
   constructor(public data: DataSantiagoService, private historiaController: HistoriaControllerService) {
     this.santiago = data.santiago;
-  }
-
-  ngOnInit(): void {
-    // this.widthPage = document.getElementById('ventanaPrincipal').clientWidth;
-    // this.historiaController.resize$.emit(this.widthPage);
   }
 
   onResize(event) {

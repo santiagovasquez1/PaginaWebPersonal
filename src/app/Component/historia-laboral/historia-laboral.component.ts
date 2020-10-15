@@ -1,3 +1,4 @@
+import { DataSantiagoService } from './../../Service/data-santiago.service';
 import { HistoriaControllerService } from './../../Service/historia-controller.service';
 import { Component, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
@@ -9,20 +10,20 @@ import { HistoriaLaboral } from 'src/app/Model/historia-laboral';
   styleUrls: ['./historia-laboral.component.css']
 })
 export class HistoriaLaboralComponent implements OnInit, OnDestroy {
-  @Input() historiaLaboral: HistoriaLaboral;
+  historiasLaborales: HistoriaLaboral[];
+
   @Output() fechaIni: string;
   @Output() fechaFin: string;
   widthPage: number;
   mainSubscription: Subscription;
 
-  constructor(private historiaController: HistoriaControllerService) {
-
+  constructor(private historiaController: HistoriaControllerService, private data: DataSantiagoService) {
+    this.historiasLaborales = data.santiago.historiasLaborales;
   }
 
   ngOnInit(): void {
     this.mainSubscription = this.historiaController.resize$.subscribe(anchopag => {
       this.widthPage = anchopag;
-      console.log('ancho pag' + anchopag);
       this.onResize(anchopag);
     });
   }
@@ -32,17 +33,22 @@ export class HistoriaLaboralComponent implements OnInit, OnDestroy {
   }
 
   private onResize(ancho: number) {
-    if (ancho < 1041) {
-      console.log('ancho pag menor que 1041');
-      // document.getElementById('experiencia').setAttribute('class', 'experienciaContainerMobile');
-      // document.getElementById('cargo').setAttribute('style', 'width: 100%;');
-      // document.getElementById('descripcion').setAttribute('style', 'width: 100%;');
+
+    if (ancho <= 1041) {
+      const root = Array.from(document.getElementsByClassName('experienciaContainerFlex'));
+      for (const item of root) {
+        item.setAttribute('class', 'experienciaContainerBlock');
+        const children = Array.from(item.childNodes) as Element[];
+        this.historiaController.resizeDiv(children, 'style', 'width: 100%;');
+      }
     }
     else {
-      console.log('ancho pag mayor que 1041');
-      // document.getElementById('experiencia').setAttribute('class', 'experienciaContainer');
-      // document.getElementById('cargo').setAttribute('style', 'width: 40%;');
-      // document.getElementById('descripcion').setAttribute('style', 'width: 40%;');
+      const root = Array.from(document.getElementsByClassName('experienciaContainerBlock'));
+      for (const item of root) {
+        item.setAttribute('class', 'experienciaContainerFlex');
+        const children = Array.from(item.childNodes) as Element[];
+        this.historiaController.resizeDiv(children, 'style', 'width: 40%;');
+      }
     }
   }
 }
