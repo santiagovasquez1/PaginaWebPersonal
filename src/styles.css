@@ -22,11 +22,6 @@ hr {
     background-color: #3a41e4;
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-}
-
 mat-card {
     margin: auto;
     display: block;
@@ -37,6 +32,16 @@ mat-card {
     font-size: 2.5em;
     line-height: 1em;
     color: #3a41e4;
+}
+
+.mainDesktop {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainMobile {
+    display: block;
+    flex-direction: column;
 }
 
 .Link {
@@ -58,6 +63,18 @@ mat-card {
     position: fixed;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
 }
+
+
+/* .InfoPersonalMobile {
+    background-color: #3a41e4;
+    padding: 0rem;
+    color: white;
+    width: 100%;
+    margin-right: 2rem;
+    height: 300px;
+    position: fixed;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+} */
 
 .Referenciacontainer {
     padding: 1rem;

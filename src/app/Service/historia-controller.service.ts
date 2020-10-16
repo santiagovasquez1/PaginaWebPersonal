@@ -8,7 +8,9 @@ import { DeviceDetectorService } from 'ngx-device-detector';
 export class HistoriaControllerService {
 
   resize$ = new EventEmitter<number>();
+  isDesktopDevice$ = new EventEmitter<boolean>();
   deviceInfo = null;
+  isDesktopDevice: boolean;
 
   constructor(private deviceService: DeviceDetectorService) { }
 
@@ -38,7 +40,8 @@ export class HistoriaControllerService {
     }
   }
 
-  public detectDevice(){
+  public detectDevice() {
     this.deviceInfo = this.deviceService.getDeviceInfo();
+    this.isDesktopDevice = this.deviceService.isDesktop();
   }
 }

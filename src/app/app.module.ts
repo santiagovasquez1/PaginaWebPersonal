@@ -15,6 +15,7 @@ import { MaterialModule } from './material.module';
 import { ReferenciaPersonalComponent } from './Component/referencia-personal/referencia-personal.component';
 import { CertificadoComponent } from './Component/certificado/certificado.component';
 import { ServiciosProfComponent } from './Component/servicios-prof/servicios-prof.component';
+import { ViewMobileComponent } from './Component/view-mobile/view-mobile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ServiciosProfComponent } from './Component/servicios-prof/servicios-pro
     InfoPersonalComponent,
     ReferenciaPersonalComponent,
     CertificadoComponent,
-    ServiciosProfComponent
+    ServiciosProfComponent,
+    ViewMobileComponent
   ],
   imports: [
     BrowserModule,
